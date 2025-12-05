@@ -1,9 +1,26 @@
 {
   "extends": [
-    "react-app",
-    "react-app/jest",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "prettier"
   ],
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    "no-empty": "off"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

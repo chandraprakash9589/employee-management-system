@@ -19,7 +19,7 @@ import Calls from "./routes/callsRoutes"
 import changeStatus from "./routes/changeStatusRoutes"
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT
 
 // Configure CORS middleware
 const corsOptions = {
@@ -47,7 +47,7 @@ app.use('/changeStatus', changeStatus);
 
 mongoose
   .connect(process.env.MONGODB_URL, {
-    serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+    serverSelectionTimeoutMS: 4500, // Keep trying to send operations for 5 seconds
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
   })
   .then(() => {
